@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#515151"
+    tools:context=".MainActivity">
+
+    <Switch
+        android:id="@+id/btSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:checked="true"
+        android:text="Bluetooth"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/statusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Connection status"
+        android:textSize="11dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/btSwitch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:popupBackground="#808080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/steeringLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="250dp"
+        android:orientation="horizontal">
+
+        <SeekBar
+            android:id="@+id/leftSeekBar"
+            android:layout_width="160dp"
+            android:layout_height="150dp"
+            android:progress="50"
+            android:rotation="270" />
+
+        <SeekBar
+            android:id="@+id/rightSeekBar"
+            android:layout_width="160dp"
+            android:layout_height="150dp"
+            android:progress="50"
+            android:rotation="270" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_gravity="bottom">
+
+            <Button
+                android:id="@+id/stopButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:background="#FF0000"
+                android:text="STOP"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/connectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/PairedDevicesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="#D10303"
+            android:gravity="center"
+            android:text="Paired devices"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ListView
+            android:id="@+id/pairedDevicesListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PairedDevicesTextView" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/redLedButton"
+                android:text="RED LED"
+                android:textColor="#FFFFFF"
+                android:background="#FF0000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/blueLedButton"
+                android:text="BLUE LED"
+                android:textColor="#FFFFFF"
+                android:background="#0000FF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/orangeLedButton"
+                android:text="ORANGE LED"
+                android:textColor="#FFFFFF"
+                android:background="#FFA500"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/greenLedButton"
+                android:text="GREEN LED"
+                android:textColor="#FFFFFF"
+                android:background="#008000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/encoderDefTextView"
+                android:layout_marginTop="50dp"
+                android:text="Encoder: "
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/encoderTextView"
+                android:layout_marginTop="50dp"
+                android:text="VALUE"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/XDefTextView"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="20dp"
+                android:text="X: "
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/XTextView"
+                android:layout_marginTop="50dp"
+                android:text="VALUE"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/YDefTextView"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="20dp"
+                android:text="Y: "
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/YTextView"
+                android:layout_marginTop="50dp"
+                android:text="VALUE"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/ZDefTextView"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="20dp"
+                android:text="Z: "
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/ZTextView"
+                android:layout_marginTop="50dp"
+                android:text="VALUE"
+                android:textColor="#FFFFFF"
+                android:gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/speed1TextView"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="V1:   [obr/min]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/torque1TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="T1:   [Nm]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/voltage1TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="U1:   [V]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/current1TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="I1:   [A]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/power1TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="P1:   [W]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/overload1TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="OVERLOAD1: "
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/speed2TextView"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="100dp"
+                    android:text="V2:   [obr/min]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/torque2TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:text="T2:   [Nm]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/voltage2TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:text="U2:   [V]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/current2TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:text="I2:   [A]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/power2TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:text="P2:   [W]"
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/overload2TextView"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="100dp"
+                    android:text="OVERLOAD2: "
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/messageNumberTextView"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="100dp"
+                    android:text="Msg: "
+                    android:textColor="#FFFFFF"
+                    android:gravity="right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
